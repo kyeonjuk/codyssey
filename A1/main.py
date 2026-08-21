@@ -101,6 +101,46 @@ def show_list():
 
 
 
+## 3. 카테고리 별 조회
+def show_by_category():
+    print("\n=== 카테고리별 조회 ===")
+
+    for index, category in enumerate(categories, start=1):
+        print(f"{index}. {category}")
+
+    choice = input("선택: ").strip()
+
+    if not choice.isdigit():
+        print("올바른 번호를 입력해주세요.")
+        return
+
+    number = int(choice)
+
+    if not 1 <= number <= len(categories):
+        print("올바른 번호를 입력해주세요.")
+        return
+
+    selected_category = categories[number - 1]
+
+    results = [
+        prompt for prompt in prompts
+        if prompt["category"] == selected_category
+    ]
+
+    if not results:
+        print("해당 카테고리에 등록된 프롬프트가 없습니다.")
+        return
+
+    print(f"\n[{selected_category}] 카테고리 프롬프트")
+
+    for index, prompt in enumerate(results, start=1):
+        star = " ⭐" if prompt["favorite"] else ""
+        print(f'{index}. {prompt["title"]}{star}')
+
+    print(f"\n총 {len(results)}개의 프롬프트")
+
+
+
 ## 메인 함수
 def main():
     while True:
@@ -114,7 +154,9 @@ def main():
             add_prompt()
         elif choice == "2":
             show_list()
-        elif choice in ["3", "4", "5", "6", "7"]:
+        elif choice == "3":
+            show_by_category()
+        elif choice in ["4", "5", "6", "7"]:
             print("아직 준비 중인 기능입니다.")
 
 
