@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PitchMate - AI 발표 시작 멘트 생성기</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="#home">PitchMate</a>
+      <nav>
+        <a href="#home">홈</a>
+        <a href="#generator">AI 생성</a>
+        <a href="#guide">사용법</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="container">
+        <p class="eyebrow">AI Presentation Helper</p>
+        <h1>발표 시작이 막막할 때,<br />첫 멘트를 빠르게 만들어보세요.</h1>
+        <p class="lead">
+          발표 주제와 분위기를 입력하면 AI가 발표 시작 멘트와 간단한 흐름을 제안합니다.
+        </p>
+        <a class="button" href="#generator">AI 멘트 만들기</a>
+      </div>
+    </section>
+
+    <section id="generator" class="section alt">
+      <div class="container narrow">
+        <h2>AI 발표 멘트 생성</h2>
+        <p class="section-desc">필수 항목을 입력하고 생성 버튼을 눌러보세요.</p>
+
+        <form id="aiForm" class="card">
+          <label for="topic">발표 주제 *</label>
+          <input id="topic" name="topic" type="text" maxlength="100"
+                 placeholder="예: 생성형 AI가 디자인 업무에 미치는 영향" />
+
+          <label for="audience">발표 대상 *</label>
+          <input id="audience" name="audience" type="text" maxlength="60"
+                 placeholder="예: 대학생" />
+
+          <label for="tone">원하는 분위기</label>
+          <select id="tone" name="tone">
+            <option value="자연스럽고 자신감 있게">자연스럽고 자신감 있게</option>
+            <option value="친근하고 편안하게">친근하고 편안하게</option>
+            <option value="차분하고 전문적으로">차분하고 전문적으로</option>
+          </select>
+
+          <button id="submitBtn" type="submit">AI로 생성하기</button>
+          <p id="status" class="status" aria-live="polite"></p>
+        </form>
+
+        <div id="resultBox" class="result hidden">
+          <h3>AI 추천 결과</h3>
+          <div id="result"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="guide" class="section">
+      <div class="container narrow">
+        <h2>사용 방법</h2>
+        <div class="guide-grid">
+          <article class="mini-card">
+            <strong>1</strong>
+            <h3>주제 입력</h3>
+            <p>발표에서 다룰 핵심 주제를 짧게 적습니다.</p>
+          </article>
+          <article class="mini-card">
+            <strong>2</strong>
+            <h3>대상 선택</h3>
+            <p>누구에게 발표하는지 적어 AI 답변의 톤을 맞춥니다.</p>
+          </article>
+          <article class="mini-card">
+            <strong>3</strong>
+            <h3>결과 활용</h3>
+            <p>생성된 멘트를 그대로 쓰기보다 내 말투에 맞게 다듬어 사용합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">PitchMate · AI Web Development Assignment</div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
