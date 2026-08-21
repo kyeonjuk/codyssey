@@ -41,7 +41,7 @@ API 키는 코드, README, 스크린샷, GitHub 커밋에 절대 직접 작성�
 
 ## 배포 URL
 - 제출 전 여기에 실제 Vercel URL을 작성하세요:
-- https://YOUR-PROJECT.vercel.app
+- https://codyssey-taupe.vercel.app/
 
 ## AI 기능
 - 입력: 발표 주제, 발표 대상, 원하는 분위기
