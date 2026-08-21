@@ -200,6 +200,34 @@ def show_detail():
     print("----------------------------")
 
 
+## 6. 즐겨찾기 관리
+def toggle_favorite():
+    print("\n=== 즐겨찾기 관리 ===")
+
+    if not prompts:
+        print("등록된 프롬프트가 없습니다.")
+        return
+
+    number_input = input("프롬프트 번호 입력: ").strip()
+
+    if not number_input.isdigit():
+        print("올바른 번호를 입력해주세요.")
+        return
+
+    number = int(number_input)
+
+    if not 1 <= number <= len(prompts):
+        print("존재하지 않는 프롬프트 번호입니다.")
+        return
+
+    prompt = prompts[number - 1]
+    prompt["favorite"] = not prompt["favorite"]
+
+    if prompt["favorite"]:
+        print(f'\'{prompt["title"]}\' 프롬프트를 즐겨찾기에 추가했습니다!')
+    else:
+        print(f'\'{prompt["title"]}\' 프롬프트를 즐겨찾기에서 해제했습니다!')
+
 
 ## 메인 함수
 def main():
@@ -220,7 +248,9 @@ def main():
             search_prompt()
         elif choice == "5":
             show_detail()
-        elif choice in ["6", "7"]:
+        elif choice == "6":
+            toggle_favorite()
+        elif choice in ["7"]:
             print("아직 준비 중인 기능입니다.")
 
 
