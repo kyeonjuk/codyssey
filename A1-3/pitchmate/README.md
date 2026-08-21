@@ -40,7 +40,6 @@ API 키는 코드, README, 스크린샷, GitHub 커밋에 절대 직접 작성�
 5. 배포 URL에서 홈/AI 생성/사용법 메뉴, 모바일 화면, AI 생성 기능을 확인합니다.
 
 ## 배포 URL
-- 제출 전 여기에 실제 Vercel URL을 작성하세요:
 - https://codyssey-taupe.vercel.app/
 
 ## AI 기능
