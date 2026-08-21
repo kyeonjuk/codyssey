@@ -49,6 +49,8 @@ def get_non_empty_input(message):
         print("입력값은 비워둘 수 없습니다.")
 
 
+
+## 1. 프롬프트 추가
 def add_prompt():
     print("\n=== 프롬프트 추가 ===")
 
@@ -83,6 +85,23 @@ def add_prompt():
     print("프롬프트가 추가되었습니다!")
 
 
+## 2. 프롬프트 목록
+def show_list():
+    print("\n=== 프롬프트 목록 ===")
+
+    if not prompts:
+        print("등록된 프롬프트가 없습니다.")
+        return
+
+    for index, prompt in enumerate(prompts, start=1):
+        star = " ⭐" if prompt["favorite"] else ""
+        print(f'{index}. [{prompt["category"]}] {prompt["title"]}{star}')
+
+    print(f"\n총 {len(prompts)}개의 프롬프트")
+
+
+
+## 메인 함수
 def main():
     while True:
         show_menu()
@@ -93,7 +112,9 @@ def main():
             break
         elif choice == "1":
             add_prompt()
-        elif choice in ["2", "3", "4", "5", "6", "7"]:
+        elif choice == "2":
+            show_list()
+        elif choice in ["3", "4", "5", "6", "7"]:
             print("아직 준비 중인 기능입니다.")
 
 
